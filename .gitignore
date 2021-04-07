@@ -2,3 +2,5 @@ twitter_api_key
 *.swp
 __pycache__
 dist
+build
+*.egg-info
