@@ -9,7 +9,7 @@ setuptools.setup(
     version="0.0.1",
     author="bwmabe",
     author_email="benwmabe@gmail.com",
-    description="A twitter stream reader library",
+    description="A wrapper around Tweepy for use with other projects",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/bwmabe/tufted-twitmouse",
