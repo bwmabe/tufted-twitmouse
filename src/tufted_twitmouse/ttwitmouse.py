@@ -1,6 +1,4 @@
 import tweepy
-import json
-import asyncio
 
 
 class TTwitmouse:
@@ -22,18 +20,4 @@ class TTwitmouse:
                                           include_rts=False)
         else:
             return self.api.user_timeline(self._uid, tweet_mode="extended", 
-                                          include_rts=False)
-
-
-
-if __name__ == "__main__":
-    async def test_function():
-        keyfile = 'twitter_api_key'
-        user_to_poll = TTwitmouse(keyfile, '4083387437')
-        tweets = user_to_poll.get_tweets()
-        for tweet in tweets:
-            print(tweet.full_text)
-
-
-    asyncio.run(test_function())
-    
+   
