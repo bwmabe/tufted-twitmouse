@@ -20,4 +20,5 @@ class TTwitmouse:
                                           include_rts=False)
         else:
             return self.api.user_timeline(self._uid, tweet_mode="extended", 
+                                          include_rts=False)
    

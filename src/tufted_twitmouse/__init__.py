@@ -1,1 +1,1 @@
-from ttwitmouse import TTwitmouse
+from .ttwitmouse import TTwitmouse
