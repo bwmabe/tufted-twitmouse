@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="tufted_twitmouse",
-    version="0.0.1",
+    version="0.0.2",
     author="bwmabe",
     author_email="benwmabe@gmail.com",
     description="A wrapper around Tweepy for use with other projects",
