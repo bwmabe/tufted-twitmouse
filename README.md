@@ -1,11 +1,8 @@
 # Tufted Twitmouse
 
-A library to read a stream of Tweets asynchronously and send the information to another process.
+A library to fetch an amount of tweets by user id for processing in another program.
 
-## Dependancies
-
-## Other Stuff
-
-## Issues
+## Dependencies
+* Tweepy
 
 (c) 2012 bwmabe
