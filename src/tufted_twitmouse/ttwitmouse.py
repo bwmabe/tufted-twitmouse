@@ -44,7 +44,7 @@ class TTwitmouse:
             self.oldest_tweet = tweets[0].id
         return tweets
 
-    async def poll(self, queue, interval=1800, until=None):
+    async def watch(self, queue, interval=1800, until=None):
         """
         Polls the Twitter API for new tweets from the specified user every
         `interval` until `until` and yields the results.
