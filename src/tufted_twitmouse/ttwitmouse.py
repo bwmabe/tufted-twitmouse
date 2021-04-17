@@ -1,5 +1,6 @@
 import tweepy
 import asyncio
+import json
 
 
 class TTwitmouse:
@@ -60,9 +61,15 @@ class TTwitmouse:
             await queue.put(await self.get_tweets())
             await asyncio.sleep(interval)
 
-    def set_oldest(self, tweet_id):
-        """
-        Used to set the oldest tweet when resuming execution
-        tweet_id: the id of the saved oldest tweet
-        """
-        self.oldest_tweet = tweet_id
+    async def listen_for(self, term, queue, interval=1800, until=None):
+        tweet_queue = asyncio.Queue()
+        watcher = asyncio.create_task(self.watch(tweet_queue, interval, until))
+        while True:
+            tweets_to_grok = await tweet_queue.get()
+            tweets = []
+            for tweet in tweets_to_grok:
+                if term in tweet._json['full_text']:
+                    tweets.append(tweet)
+            await queue.put(tweets)
+        await tweet_queue.join()
+        await asyncio.gather(watcher)
