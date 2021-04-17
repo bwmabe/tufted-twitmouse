@@ -6,10 +6,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="tufted_twitmouse",
-    version="0.0.2",
+    version="0.1.0",
     author="bwmabe",
     author_email="benwmabe@gmail.com",
-    description="A wrapper around Tweepy for use with other projects",
+    description="An asynchronous Twitter watcher/follower",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/bwmabe/tufted-twitmouse",
