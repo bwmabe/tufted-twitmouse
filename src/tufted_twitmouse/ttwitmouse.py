@@ -35,12 +35,13 @@ class TTwitmouse:
         """
         if self.oldest_tweet:
             tweets = self.api.user_timeline(self._uid, tweet_mode="extended",
-                                            since_id=self.oldest_tweet.id,
+                                            since_id=self.oldest_tweet,
                                             include_rts=False)
         else:
             tweets = self.api.user_timeline(self._uid, tweet_mode="extended",
                                             include_rts=False)
-        self.oldest_tweet = tweets[0].id
+        if tweets:
+            self.oldest_tweet = tweets[0].id
         return tweets
 
     async def poll(self, queue, interval=1800, until=None):
